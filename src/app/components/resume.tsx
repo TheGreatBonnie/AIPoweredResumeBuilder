@@ -78,39 +78,29 @@ export const CoverLetterAndResume = () => {
         },
       ],
       implementation: async () => {
-        if (
-          !createCoverLetterAndResume.letter ||
-          !createCoverLetterAndResume.resume
-        ) {
-          console.error(
-            "Cover letter or resume is empty. Please ensure they are filled before generating PDFs."
-          );
-          return;
-        } else {
-          const marginLeft = 10;
-          const marginTop = 10;
-          const maxWidth = 180;
+        const marginLeft = 10;
+        const marginTop = 10;
+        const maxWidth = 180;
 
-          const coverLetterDoc = new jsPDF();
-          addTextToPDF(
-            coverLetterDoc,
-            createCoverLetterAndResume.letter,
-            marginLeft,
-            marginTop,
-            maxWidth
-          );
-          coverLetterDoc.save("coverLetter.pdf");
+        const coverLetterDoc = new jsPDF();
+        addTextToPDF(
+          coverLetterDoc,
+          createCoverLetterAndResume.letter,
+          marginLeft,
+          marginTop,
+          maxWidth
+        );
+        coverLetterDoc.save("coverLetter.pdf");
 
-          const resumeDoc = new jsPDF();
-          addTextToPDF(
-            resumeDoc,
-            createCoverLetterAndResume.resume,
-            marginLeft,
-            marginTop,
-            maxWidth
-          );
-          resumeDoc.save("resume.pdf");
-        }
+        const resumeDoc = new jsPDF();
+        addTextToPDF(
+          resumeDoc,
+          createCoverLetterAndResume.resume,
+          marginLeft,
+          marginTop,
+          maxWidth
+        );
+        resumeDoc.save("resume.pdf");
       },
     },
     []
