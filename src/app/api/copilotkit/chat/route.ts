@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-  apiKey: "Your GitHub API Key",
+  apiKey: "Your ChatGPT API Key",
 });
 
 export const runtime = "edge";

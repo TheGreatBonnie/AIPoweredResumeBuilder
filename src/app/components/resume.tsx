@@ -1,5 +1,5 @@
 // import React from "react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { useGithubData } from "./githubdata";
 import jsPDF from "jspdf";
@@ -103,7 +103,7 @@ export const CoverLetterAndResume = () => {
         resumeDoc.save("resume.pdf");
       },
     },
-    []
+    [createCoverLetterAndResume]
   );
 
   // Update Cover Letter
