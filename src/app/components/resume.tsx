@@ -124,13 +124,6 @@ export const CoverLetterAndResume = () => {
             "Update markdown text for a cover letter to introduce yourself and briefly summarize your professional background as a software developer.",
           required: true,
         },
-        {
-          name: "resumeMarkdown",
-          type: "string",
-          description:
-            "Markdown text for a resume that displays your professional background and relevant skills.",
-          required: true,
-        },
       ],
       implementation: async (updatedCoverLetterMarkdown) => {
         setCreateCoverLetterAndResume((prevState) => ({
@@ -197,7 +190,6 @@ const CoverLetterResume = ({ letter, resume }: CoverLetterResumeProps) => {
                 Cover Letter
               </h2>
               <div className="min-w-full divide-y divide-gray-300 p-2">
-                {/* <Thead /> */}
                 <div className="divide-y divide-gray-200 bg-white p-2">
                   <ReactMarkdown>{letter}</ReactMarkdown>
                 </div>
